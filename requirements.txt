@@ -1,4 +1,6 @@
-fastapi
-uvicorn
-jinja2
-python-multipart
+# fastapi
+# uvicorn
+# jinja2
+# python-multipart
+git+https://github.com/elastic/ember.git@master
+
