@@ -1,6 +1,12 @@
-# fastapi
-# uvicorn
-# jinja2
-# python-multipart
+fastapi
+uvicorn
+jinja2
+pydantic
+python-multipart
+tensorflow
+scikit-learn==0.22.2.post1
+numpy==1.19.5
+anyio==3.3.3
+idna==3.3
 git+https://github.com/elastic/ember.git@master
 
