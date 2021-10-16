@@ -3,7 +3,7 @@ uvicorn
 jinja2
 pydantic
 python-multipart
-tensorflow
+tensorflow-cpu
 scikit-learn==0.22.2.post1
 numpy==1.19.5
 anyio==3.3.3
