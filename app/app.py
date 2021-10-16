@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi import Request, File
 from fastapi.staticfiles import StaticFiles
+from starlette.responses import FileResponse
 
 from detection.process import predict
 
@@ -16,6 +17,11 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 def getForm(request: Request):
     return templating.TemplateResponse("index.jinja", {
         "request": request})
+
+
+@app.get('/favicon.ico')
+async def favicon():
+    return FileResponse("/static/favicon.ico")
 
 
 @app.get('/test')

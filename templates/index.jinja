@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codium</title>
+    <!-- <link rel="stylesheet" href="../static/style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}"
+</head>
+
+<body>
+
+    <header>
+        <h2 class="brand-name">Codium</h2>
+    </header>
+
+    <div class="container">
+        <div class="choose-container">
+            <!-- <img class = "logo"  src = "../static/logo.png" alt="Logo"> <br> -->
+            <img class = "logo"  src = "{{ url_for('static', path='/logo.png') }}" alt="Logo">
+            <button onclick="uploadFile()" class="upload" id="upload">Upload</button>
+        </div>
+
+        <div class="vertical-line"></div>
+    
+        <div class="res-container">
+            <input id="input" type="file" accept=".exe" hidden>
+
+            <!-- <img id = "illustration" class="illustration" src="../static/main-vector.svg" alt="illustration" /> -->
+            <img id = "illustration" class="illustration" src="{{ url_for('static', path='/main-vector.svg') }}" alt="illustration" />
+
+            <div id = "res" class="res-container">
+                <div class="file-ic-container">
+                    <!-- <img class = "file-ic" src="../static/ic_file.svg" alt="file"> -->
+                    <img class = "file-ic" src="{{ url_for('static', path='/ic_file.svg') }}" alt="file">
+                    <h3 id="chosen-file"></h3>
+                </div>
+                <div id = "loader" class="loader"></div>
+                <h1 id="result"></h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', path='/index.js') }}"></script>
+    <!-- <script src="../static/index.js"></script> -->
+    
+</body>
+</html>

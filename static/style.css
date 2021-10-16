@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 20px 15px;
+    border-bottom: 0.5px solid rgba(179, 177, 177, 0.493);
+    box-shadow: 0 1px 3px 0.5px rgba(155, 155, 155, 0.363);
+    background-color: #F97F21;
+    font-family: 'Josefin Sans';
+}
+
+.brand-name {
+    color: #fff;
+    font-size: 28px;
+}
+
+.choose-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex: 2;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-direction: row;
+    margin: 4vh 0;
+}
+
+.res-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.illustration {
+    width: 95%;
+}
+
+.vertical-line {
+    width: 4px;
+    background-color: rgba(233, 233, 233, 0.795);
+    margin: 50px 0;
+    border-radius: 5px
+}
+
+.logo {
+    width: 40%;
+}
+
+.upload {
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #F97F21;
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 0;
+    box-shadow: 0 2px 3px #ec7519;
+    transition-duration: 0.1s;
+    cursor: pointer;
+}
+
+.upload:hover {
+    box-shadow: 0 2px 6px 2px #ec7519;
+}
+
+.file-ic {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.file-ic-container {
+    margin-top: 10px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result {
+    font-weight: bold;
+    font-family: Josefin Sans;
+}
+
+#res {
+    display: none;
+}
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-radius: 60%;
+    border-top: 10px solid #FFB656;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+h1 {
+    font-size: 40px;
+}
