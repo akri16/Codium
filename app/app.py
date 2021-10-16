@@ -3,7 +3,6 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi import Request, File
 from fastapi.staticfiles import StaticFiles
-from starlette.responses import FileResponse
 
 from detection.process import predict
 
@@ -19,11 +18,6 @@ def getForm(request: Request):
         "request": request})
 
 
-@app.get('/favicon.ico')
-async def favicon():
-    return FileResponse("/static/favicon.ico")
-
-
 @app.get('/test')
 def helloWorld() -> dict:
     return {"message": "Hello World"}
@@ -33,7 +27,6 @@ def helloWorld() -> dict:
 async def getForm(file: bytes = File(...)):
     res = predict(file)
     print(res)
-
     return {"result" : round(res, 3)}
 
 

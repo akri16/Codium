@@ -59,7 +59,7 @@ header {
 }
 
 .upload {
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 15px 30px;
     background-color: #F97F21;
     border-radius: 10px;
@@ -99,6 +99,7 @@ header {
 }
 
 .loader {
+    visibility: hidden;
     border: 10px solid #f3f3f3;
     border-radius: 60%;
     border-top: 10px solid #FFB656;

@@ -5,6 +5,7 @@ fileName = document.getElementById("chosen-file");
 resCont = document.getElementById("res");
 illus = document.getElementById("illustration")
 loader = document.getElementById("loader");
+audio = new Audio('done-beep.wav');
 
 
 function uploadFile() {
@@ -28,22 +29,23 @@ async function showFile(file) {
 
     illus.hidden = true;
     resCont.style.display = "flex";
-    loader.hidden = false;
+    loader.style.visibility = "visible";
 
     fileName.innerHTML = file.name;
-
-
+    let sendData = new FormData();
+    sendData.append("file", file);
 
     try {
-        // let res = await fetch('/predict', {
-        //     method: 'POST',
-        //     body: file
-        // })
+        let res = await fetch('/predict', {
+            method: 'POST',
+            body: sendData
+        })
 
-        // let data = await res.json();
+        let data = await res.json();
+        console.log(data);
+        audio.play();
 
-
-        if (data.data < 0.4){
+        if (data.result < 0.4){
             result.innerHTML = "Benign ✔️";
             result.style.color = "#1a7d1a";
         }
@@ -59,8 +61,8 @@ async function showFile(file) {
         illus.hidden = false;
         resCont.style.display = "none";
     } finally {
-        loader.hidden = true;
-        uploadButton.disabled = false;
+        loader.style.visibility = "hidden";
+        upload.disabled = false;
     }
 
 }
