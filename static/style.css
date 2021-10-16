@@ -6,7 +6,10 @@
 }
 
 header {
-    padding: 20px 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: calc(1vh + 8px) 15px;
     border-bottom: 0.5px solid rgba(179, 177, 177, 0.493);
     box-shadow: 0 1px 3px 0.5px rgba(155, 155, 155, 0.363);
     background-color: #F97F21;
@@ -31,10 +34,12 @@ header {
     justify-content: space-around;
     align-items: stretch;
     flex-direction: row;
-    margin: 4vh 0;
+    margin-top: calc(5vh + 50px) ;
+    margin-bottom: 30px;
 }
 
 .res-container {
+    margin: 30px 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -92,6 +97,7 @@ header {
 #result {
     font-weight: bold;
     font-family: Josefin Sans;
+    height: 1em;
 }
 
 #res {
@@ -99,12 +105,13 @@ header {
 }
 
 .loader {
+    margin: 10px 0;
     visibility: hidden;
     border: 10px solid #f3f3f3;
     border-radius: 60%;
     border-top: 10px solid #FFB656;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     animation: spin 1s linear infinite;
 }
   
@@ -116,3 +123,18 @@ header {
 h1 {
     font-size: 40px;
 }
+
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .choose-container {
+        flex: 1;
+    }
+    
+    .res-container {
+        flex: 1;
+    }
+
+  }

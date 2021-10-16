@@ -1,11 +1,11 @@
-input = document.getElementById("input");
-upload = document.getElementById("upload");
-result = document.getElementById("result");
-fileName = document.getElementById("chosen-file");
-resCont = document.getElementById("res");
-illus = document.getElementById("illustration")
-loader = document.getElementById("loader");
-audio = new Audio('done-beep.wav');
+const input = document.getElementById("input");
+const upload = document.getElementById("upload");
+const result = document.getElementById("result");
+const fileName = document.getElementById("chosen-file");
+const resCont = document.getElementById("res");
+const illus = document.getElementById("illustration")
+const loader = document.getElementById("loader");
+const audio = new Audio(document.getElementById("audio").innerHTML);
 
 
 function uploadFile() {
@@ -17,6 +17,7 @@ input.addEventListener("change", function() {
     file = this.files[0];
     upload.disabled = file === undefined;
     if (file) showFile(file); 
+    this.value = "";
 });
   
 
@@ -32,16 +33,16 @@ async function showFile(file) {
     loader.style.visibility = "visible";
 
     fileName.innerHTML = file.name;
-    let sendData = new FormData();
+    const sendData = new FormData();
     sendData.append("file", file);
 
     try {
-        let res = await fetch('/predict', {
+        const res = await fetch('/predict', {
             method: 'POST',
             body: sendData
         })
 
-        let data = await res.json();
+        const data = await res.json();
         console.log(data);
         audio.play();
 
