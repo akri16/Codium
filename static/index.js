@@ -28,6 +28,7 @@ async function showFile(file) {
         return;
     }
 
+    result.innerHTML = "";
     illus.hidden = true;
     resCont.style.display = "flex";
     loader.style.visibility = "visible";

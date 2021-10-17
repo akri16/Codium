@@ -105,7 +105,7 @@ header {
 }
 
 .loader {
-    margin: 10px 0;
+    margin: 30px 0;
     visibility: hidden;
     border: 10px solid #f3f3f3;
     border-radius: 60%;
@@ -139,6 +139,10 @@ h1 {
     
     .res-container {
         flex: 1;
+    }
+
+    .vertical-line {
+        display: none;
     }
 
   }
