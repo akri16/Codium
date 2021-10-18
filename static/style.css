@@ -129,6 +129,14 @@ h1 {
     margin: 10px 0;
 }
 
+#chosen-file {
+    width: 50%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 @media only screen and (max-width: 600px) {
     .container {
         flex-direction: column;
