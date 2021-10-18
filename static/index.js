@@ -22,8 +22,8 @@ input.addEventListener("change", function() {
   
 
 async function showFile(file) {
-    if (!file || file.name.split('.').pop() !== "exe" || file.size > 10**7) {
-        alert("Please select a .exe file of less than 10 MB");
+    if (!file || file.name.split('.').pop() !== "exe" || file.size > 50**8) {
+        alert("Please select a .exe file of less than 500 MB");
         console.log(`${file} ${file.name.split('.').pop()} ${file.size}`);
         return;
     }
